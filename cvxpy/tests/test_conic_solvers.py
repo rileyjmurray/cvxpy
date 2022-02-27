@@ -153,7 +153,7 @@ class TestSCS(BaseTest):
         x = cp.Variable(2, name='x')
         prob = cp.Problem(cp.Minimize(cp.norm(x, 1) + 1.0), [x == 0])
         for i in range(2):
-            prob.solve(solver=cp.SCS, max_iters=50, eps=EPS, alpha=1.2,
+            prob.solve(solver=cp.SCS, max_iters=50, eps=EPS, alpha=EPS,
                        verbose=True, normalize=True, use_indirect=False)
         self.assertAlmostEqual(prob.value, 1.0, places=2)
         self.assertItemsAlmostEqual(x.value, [0, 0], places=2)

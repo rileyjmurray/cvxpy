@@ -327,14 +327,15 @@ class SCS(ConicSolver):
 
         solver_opts = SCS.parse_solver_options(solver_opts)
         results, status = solve(solver_opts)
-        if status in s.INACCURATE and status != s.USER_LIMIT:
-            acceleration_available = Version(scs.__version__) >= Version('2.0.0')
-            if acceleration_available and "acceleration_lookback" not in solver_opts:
-                import warnings
-                warnings.warn(SCS.ACCELERATION_RETRY_MESSAGE)
-                retry_opts = solver_opts.copy()
-                retry_opts["acceleration_lookback"] = 0
-                results, status = solve(retry_opts)
+        # if status in s.INACCURATE and status != s.USER_LIMIT:
+        # acceleration_available = Version(scs.__version__) >= Version('2.0.0')
+        # if acceleration_available and "acceleration_lookback" not in solver_opts:
+        # if False:
+        #    import warnings
+        #    warnings.warn(SCS.ACCELERATION_RETRY_MESSAGE)
+        #    retry_opts = solver_opts.copy()
+        #    retry_opts["acceleration_lookback"] = 0
+        #    results, status = solve(retry_opts)
 
         if solver_cache is not None and status == s.OPTIMAL:
             solver_cache[self.name()] = results

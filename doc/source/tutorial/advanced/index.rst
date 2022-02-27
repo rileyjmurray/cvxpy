@@ -836,6 +836,16 @@ For others see `OSQP documentation <http://osqp.org/docs/interfaces/solver_setti
 ``'alpha'``
     relaxation parameter (default: 1.8).
 
+``'acceleration_lookback'``
+    Anderson acceleration parameter for SCS 2.0 and higher. This can be any positive or negative integer;
+    its default value is 10. See `this page of the SCS documentation <https://www.cvxgrp.org/scs/algorithm/acceleration.html#in-scs>`_
+    for more information.
+
+    .. warning::
+        The value of this parameter often effects whether or not SCS will converge to an accurate solution.
+        If you don't *explicitly* set ``acceleration_lookback`` and SCS fails to converge, then CVXPY
+        will raise a warning and try to re-solve the problem with ``acceleration_lookback=0``.
+
 ``'scale'``
     balance between minimizing primal and dual residual (default: 5.0).
 
