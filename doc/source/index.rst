@@ -12,8 +12,27 @@ Words.
 .. _ECOS: http://github.com/ifa-ethz/ecos
 .. _SCS: http://github.com/cvxgrp/scs
 
+
 .. toctree::
     :maxdepth: 3
+    :hidden:
+
+    Getting Started <learning/index>
+
+.. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    Install <install/index>
+
+.. toctree::
+    :maxdepth: 3
+    :hidden:
+
+    User Guide <guide/index>
+
+.. toctree::
+    :maxdepth: 4
     :hidden:
 
     Legacy <legacy/index>
