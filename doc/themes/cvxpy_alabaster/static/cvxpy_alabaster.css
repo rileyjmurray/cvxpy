@@ -7,6 +7,16 @@ table.docutils td {
     white-space: wrap;
 }
 
+/* Enable sidebar scrolling via overflow-y */
+@media screen and (min-width: 876px) {
+    div.sphinxsidebar {
+        height: 100vh; /* For 100% screen height */
+        position: fixed;
+        overflow-y: auto;
+        margin-left: 0;
+    }
+}
+
 /* Make the logo smaller by adding padding */
 div.sphinxsidebar p.logo {
     color: #555;
