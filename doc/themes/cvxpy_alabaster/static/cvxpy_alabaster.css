@@ -6,3 +6,37 @@
 table.docutils td {
     white-space: wrap;
 }
+
+/* Make the logo smaller by adding padding */
+div.sphinxsidebar p.logo {
+    color: #555;
+    padding-left: 5px;
+    padding-right: 35px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+/* Alabaster wants to put a plain-text "CVXPY"
+   Just above the GitHub buttons. We want to
+   use the wordmark of the CVXPY logo instead
+   of plain text. Step 1 of resolving this is to
+   crop out our wordmark from the logo, and tell
+   Alabaster that the resulting image is our logo.
+   Step 2 is to set the font size for Alabaster's
+   plain-text "CVXPY" to zero.
+ */
+div.sphinxsidebarwrapper h1.logo {
+    margin-top: -10px;
+    font-size: 0;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* This is only used for the GitHub button.
+   We want to center the button, rather than
+   left-align. */
+div.sphinxsidebar p {
+    color: #555;
+    padding-left: 10px;
+    display: block;
+}
